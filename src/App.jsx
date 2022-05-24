@@ -13,46 +13,48 @@ import model from './model.js';
 const primary = '#9b5d30';
 
 const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: primary,
-      contrastText: '#fff'
-    },
-    secondary: {
-      main: '#000000',
-      contrastText: primary
+    palette: {
+        primary: {
+            main: primary,
+            contrastText: '#fff'
+        },
+        secondary: {
+            main: '#000000',
+            contrastText: primary
+        }
     }
-  }
 });
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.mineBitcoin(1500);
-  }
-  mineBitcoin(duration) {
-    const start = new Date().getTime();
-    while (new Date().getTime() < start + duration) {
-      // TODO(tony): Make $$$
+    constructor(props) {
+        super(props);
+        // this.mineBitcoin(1500);
     }
-  }
-  render() {
-    return (
-      <Router>
-        <MuiThemeProvider theme={theme}>
-          <div>
-            <Header/>
-            <Route exact path="/" component={Home}/>
-            <Route path="/brrto" component={Pages.Brrto}/>
-            <Route path="/pezza" component={Pages.Pezza}/>
-            <Route path="/fesh" component={Pages.Fesh}/>
-            <Route path="/soop" component={Pages.Soop}/>
-            <Typography variant="body1">Built with 🐟 by Tony the 🐈</Typography>
-          </div>
-        </MuiThemeProvider>
-      </Router>
-    );
-  }
+    mineBitcoin(duration) {
+        const start = new Date().getTime();
+        while (new Date().getTime() < start + duration) {
+            // TODO(tony): Make $$$
+        }
+    }
+    render() {
+        return (
+            <Router>
+                <MuiThemeProvider theme={theme}>
+                    <div>
+                        <Header />
+                        <Route exact path="/" component={Home} />
+                        <Route path="/brrto" component={Pages.Brrto} />
+                        <Route path="/pezza" component={Pages.Pezza} />
+                        <Route path="/fesh" component={Pages.Fesh} />
+                        <Route path="/soop" component={Pages.Soop} />
+                        <Typography variant="body1">
+                            Built with 🐟 by Tony the 🐈
+                        </Typography>
+                    </div>
+                </MuiThemeProvider>
+            </Router>
+        );
+    }
 }
 
 export default App;
